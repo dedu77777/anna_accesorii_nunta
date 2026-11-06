@@ -1,0 +1,248 @@
+
+.anna-header {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    background: #faf8f5;
+    border-bottom: 1px solid var(--anna-border);
+}
+
+.anna-header-container {
+    width: min(100% - 40px, 1230px);
+    min-height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.anna-header-logo {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    color: var(--anna-text);
+}
+
+.anna-header-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.anna-header-nav a {
+    color: var(--anna-text);
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.anna-header-nav a:hover,
+.anna-header-nav a.active {
+    border-bottom-color: var(--anna-accent);
+}
+
+.anna-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.anna-search {
+    width: 210px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid var(--anna-border);
+    border-radius: 5px;
+}
+
+.anna-search:focus-within {
+    border-color: var(--anna-accent);
+}
+
+.anna-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 0 12px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--anna-text);
+    font-size: 13px;
+}
+
+.anna-search button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    border: none;
+    background: transparent;
+    color: var(--anna-text);
+}
+
+.anna-cart-icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--anna-text);
+}
+
+.anna-cart-icon:hover {
+    color: #a88b66;
+}
+
+.anna-cart-count {
+    position: absolute;
+    top: -3px;
+    right: -6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--anna-text);
+    color: white;
+    font-size: 10px;
+}
+
+.anna-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.anna-menu-toggle {
+    display: none;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    border: none;
+    background: transparent;
+}
+
+.anna-menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: var(--anna-text);
+}
+
+.anna-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 20px;
+    background: var(--anna-background);
+    border-top: 1px solid var(--anna-border);
+}
+
+.anna-mobile-nav[hidden] {
+    display: none !important;
+}
+
+.anna-mobile-nav a {
+    padding: 13px 5px;
+    font-size: 15px;
+}
+
+@media (min-width: 851px) {
+    .anna-mobile-nav {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .anna-header-container {
+        gap: 18px;
+    }
+
+    .anna-header-logo {
+        font-size: 18px;
+    }
+
+    .anna-header-nav {
+        gap: 18px;
+    }
+
+    .anna-search {
+        width: 160px;
+    }
+}
+
+@media (max-width: 850px) {
+    .anna-header-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 44px 44px;
+        column-gap: 8px;
+        row-gap: 10px;
+        min-height: 0;
+        padding: 12px 0;
+    }
+
+    .anna-header-logo {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+    }
+
+    .anna-header-nav {
+        display: none;
+    }
+
+    .anna-header-actions {
+        display: contents;
+    }
+
+    .anna-cart-icon {
+        grid-column: 2;
+        grid-row: 1;
+        width: 44px;
+        height: 44px;
+    }
+
+    .anna-menu-toggle {
+        grid-column: 3;
+        grid-row: 1;
+        display: flex;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+    }
+
+    .anna-search {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        height: 44px;
+    }
+}
+
+@media (max-width: 600px) {
+    .anna-header-container {
+        width: calc(100% - 32px);
+    }
+
+    .anna-header-logo {
+        font-size: clamp(12px, 3.4vw, 15px);
+        letter-spacing: 0.2px;
+    }
+}

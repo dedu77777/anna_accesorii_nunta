@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * Yii2 console bootstrap.
+ */
+
+// Load Composer dependencies
+require __DIR__ . '/vendor/autoload.php';
+
+// Load environment variables from .env
+require __DIR__ . '/config/bootstrap-env.php';
+
+// Configure Yii2 environment
+$environment = getenv('APP_ENV') ?: 'prod';
+
+defined('YII_ENV') or define('YII_ENV', $environment);
+defined('YII_DEBUG') or define('YII_DEBUG', $environment === 'dev');
+
+// Load Yii2 framework
+require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
+
+// Load console configuration
+$config = require __DIR__ . '/config/console.php';
+
+// Start application
+$application = new yii\console\Application($config);
+
+$exitCode = $application->run();
+
+exit($exitCode);

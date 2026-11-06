@@ -1,0 +1,128 @@
+
+.anna-footer {
+    width: 100%;
+    margin-top: auto;
+    background: var(--anna-footer-bg);
+    color: #f5f1ed;
+    padding: 65px 24px 36px;
+}
+
+.anna-footer-container {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.anna-footer-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr 1fr;
+    gap: 70px;
+    padding-bottom: 48px;
+}
+
+.anna-footer-brand h2 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin: 0 0 15px;
+}
+
+.anna-footer-description {
+    color: #b8aaa0;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 0 20px;
+}
+
+.anna-footer-location {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #b8aaa0;
+    font-size: 15px;
+}
+
+.anna-footer-location span {
+    color: #cbb38b;
+    font-size: 20px;
+}
+
+.anna-footer-column h3 {
+    color: #d7c3a4;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    margin: 0 0 25px;
+}
+
+.anna-footer-column nav,
+.anna-footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.anna-footer-column a {
+    color: #e0d9d3;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.anna-footer-column a:hover {
+    color: #d7c3a4;
+}
+
+.anna-footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.anna-footer-contact a span {
+    width: 18px;
+    text-align: center;
+    color: #d7c3a4;
+    font-size: 18px;
+}
+
+.anna-footer-bottom {
+    border-top: 1px solid #49423e;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.anna-footer-bottom p {
+    margin: 0;
+    color: #a99c92;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+}
+
+@media (max-width: 900px) {
+    .anna-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+    }
+}
+
+@media (max-width: 600px) {
+    .anna-footer {
+        padding: 50px 22px 28px;
+    }
+
+    .anna-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-bottom: 40px;
+    }
+
+    .anna-footer-brand h2 {
+        font-size: 22px;
+    }
+
+    .anna-footer-bottom p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}

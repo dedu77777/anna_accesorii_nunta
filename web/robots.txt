@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /produse/cauta
+
+Sitemap: https://annaaccesoriinunta.md/sitemap.xml

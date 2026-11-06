@@ -1,0 +1,153 @@
+/* EDITORIAL SPLASH */
+.anna-splash { display: none; }
+
+.anna-splash-active .anna-splash {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--anna-background);
+    pointer-events: none;
+    animation: anna-curtain 720ms cubic-bezier(0.76, 0, 0.24, 1) 1480ms forwards;
+}
+
+.anna-splash-lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    width: 100%;
+}
+
+.anna-splash-brand {
+    display: block;
+    color: var(--anna-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: normal;
+    letter-spacing: 0.105em;
+    line-height: 1.3;
+    text-align: center;
+    animation: anna-type-uncover 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anna-splash-line {
+    width: 72px;
+    height: 1px;
+    background: var(--anna-accent);
+    transform-origin: center;
+    animation: anna-rule-uncover 500ms cubic-bezier(0.22, 1, 0.36, 1) 700ms both;
+}
+
+@keyframes anna-type-uncover {
+    from { clip-path: inset(0 0 100% 0); transform: translateY(6px); }
+    to { clip-path: inset(0 0 0 0); transform: translateY(0); }
+}
+
+@keyframes anna-rule-uncover {
+    from { opacity: 0; transform: scaleX(0); }
+    to { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes anna-curtain {
+    to { transform: translateY(-100%); visibility: hidden; }
+}
+
+/* SHARED ENTRANCE */
+@keyframes anna-enter {
+    from { opacity: 0; transform: translateY(var(--anna-enter-distance, 8px)); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.anna-hero-ready .home-hero-content h1,
+.anna-hero-ready .home-hero-subtitle,
+.anna-hero-ready .home-hero-actions,
+.anna-intro-ready .about-section-heading,
+.anna-intro-ready .about-intro-grid > .about-image-card,
+.anna-intro-ready .about-intro-content > h2,
+.anna-intro-ready .about-intro-content > p,
+.anna-intro-ready .about-services,
+.anna-revealed .home-categories-heading,
+.anna-revealed .home-products-heading,
+.anna-revealed .home-faq-heading,
+.anna-revealed .home-faq-list,
+.anna-revealed .home-category,
+.anna-revealed .home-product-card,
+.anna-revealed .about-process-content > h2,
+.anna-revealed .about-process-intro,
+.anna-revealed .about-step,
+.anna-revealed .about-process-image,
+.anna-revealed .about-contact-heading,
+.anna-revealed .about-contact-card {
+    animation: anna-enter var(--anna-enter-duration, 550ms) cubic-bezier(0.22, 1, 0.36, 1) var(--anna-enter-delay, 0ms) both;
+}
+
+/* HERO AND ABOUT INTRO */
+.anna-hero-ready .home-hero-content h1 { --anna-enter-distance: 12px; --anna-enter-duration: 700ms; }
+.anna-hero-ready .home-hero-subtitle { --anna-enter-duration: 600ms; --anna-enter-delay: 120ms; }
+.anna-hero-ready .home-hero-actions { --anna-enter-duration: 550ms; --anna-enter-delay: 240ms; }
+.anna-intro-ready .about-section-heading { --anna-enter-distance: 10px; }
+.anna-intro-ready .about-intro-grid > .about-image-card { --anna-enter-distance: 10px; --anna-enter-duration: 650ms; --anna-enter-delay: 90ms; }
+.anna-intro-ready .about-intro-content > h2,
+.anna-intro-ready .about-intro-content > p { --anna-enter-delay: 170ms; }
+.anna-intro-ready .about-services { --anna-enter-delay: 260ms; }
+
+/* HOMEPAGE SECTIONS */
+.anna-revealed .home-categories-heading,
+.anna-revealed .home-products-heading,
+.anna-revealed .home-faq-heading { --anna-enter-distance: 10px; }
+.anna-revealed .home-category,
+.anna-revealed .home-product-card { --anna-enter-duration: 500ms; }
+.anna-revealed .home-category:nth-child(2) { --anna-enter-delay: 75ms; }
+.anna-revealed .home-category:nth-child(3) { --anna-enter-delay: 150ms; }
+.anna-revealed .home-product-card:nth-child(3n + 2) { --anna-enter-delay: 60ms; }
+.anna-revealed .home-product-card:nth-child(3n + 3) { --anna-enter-delay: 120ms; }
+.anna-revealed .home-faq-list { --anna-enter-delay: 90ms; }
+
+/* ABOUT SECTIONS */
+.anna-revealed .about-process-intro { --anna-enter-delay: 70ms; }
+.anna-revealed .about-step { --anna-enter-duration: 500ms; --anna-enter-delay: 120ms; }
+.anna-revealed .about-step:nth-child(2) { --anna-enter-delay: 200ms; }
+.anna-revealed .about-step:nth-child(3) { --anna-enter-delay: 280ms; }
+.anna-revealed .about-process-image { --anna-enter-duration: 650ms; --anna-enter-distance: 10px; --anna-enter-delay: 100ms; }
+.anna-revealed .about-contact-card { --anna-enter-duration: 500ms; --anna-enter-delay: 90ms; }
+.anna-revealed .about-contact-card:nth-child(2) { --anna-enter-delay: 160ms; }
+.anna-revealed .about-contact-card:nth-child(3) { --anna-enter-delay: 230ms; }
+.anna-revealed .about-contact-card:nth-child(4) { --anna-enter-delay: 300ms; }
+
+/* MOBILE AND REDUCED MOTION */
+@media (max-width: 600px) {
+    .anna-revealed .home-category:nth-child(n),
+    .anna-revealed .home-product-card:nth-child(n),
+    .anna-revealed .about-step:nth-child(n),
+    .anna-revealed .about-contact-card:nth-child(n) { --anna-enter-delay: 0ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .anna-splash-active .anna-splash { display: none; }
+    .anna-splash-brand,
+    .anna-splash-line,
+    .anna-hero-ready .home-hero-content h1,
+    .anna-hero-ready .home-hero-subtitle,
+    .anna-hero-ready .home-hero-actions,
+    .anna-intro-ready .about-section-heading,
+    .anna-intro-ready .about-intro-grid > .about-image-card,
+.anna-intro-ready .about-intro-content > h2,
+.anna-intro-ready .about-intro-content > p,
+.anna-intro-ready .about-services,
+    .anna-revealed .home-categories-heading,
+    .anna-revealed .home-products-heading,
+    .anna-revealed .home-faq-heading,
+    .anna-revealed .home-faq-list,
+    .anna-revealed .home-category,
+    .anna-revealed .home-product-card,
+    .anna-revealed .about-process-content > h2,
+    .anna-revealed .about-process-intro,
+    .anna-revealed .about-step,
+    .anna-revealed .about-process-image,
+    .anna-revealed .about-contact-heading,
+    .anna-revealed .about-contact-card { animation: none; }
+}

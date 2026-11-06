@@ -1,0 +1,48 @@
+# Local credentials and environment overrides
+/.env
+/.env.*
+!/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies and generated application data
+/vendor/
+/runtime/
+/web/assets/
+/web/images/products/admin/
+/web/images/categories/admin-*
+
+# Local tests, caches, and reports
+/tests/_output/
+/tests/_support/_generated/
+**/__pycache__/
+.pytest_cache/
+.phpunit.cache/
+/phpunit.xml
+/premium-audit.json
+/c3.php
+/create-test-admin.php
+/web/index-test.php
+*.log
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+
+# Local development tools
+/.idea/
+/.vscode/
+/nbproject/
+/.buildpath
+/.project
+/.settings/
+/.vagrant/
+.DS_Store
+Thumbs.db
+composer.phar
+phpunit.phar
+
+# Omitted from this GitHub repository at the owner's request
+/README.md
