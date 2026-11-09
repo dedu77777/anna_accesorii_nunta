@@ -39,6 +39,8 @@ $this->registerLinkTag(
     [
         'rel' => 'icon',
         'type' => 'image/x-icon',
-        'href' => Yii::getAlias('@web/favicon.ico'),
+        'href' => Yii::getAlias('@web/favicon.ico?v=2'),
     ],
 );
+$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'sizes' => '32x32', 'href' => Yii::getAlias('@web/favicon-32x32.png?v=2')]);
+$this->registerLinkTag(['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href' => Yii::getAlias('@web/apple-touch-icon.png?v=2')]);

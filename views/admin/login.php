@@ -17,6 +17,7 @@ AdminLoginAsset::register($this);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= Html::encode(Yii::getAlias('@web/favicon-32x32.png?v=2')) ?>">
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
