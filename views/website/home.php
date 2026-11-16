@@ -25,6 +25,7 @@ $this->params['structuredData'] = [
             '@id' => SiteSeo::url('/#organization'),
             'name' => 'Anna Accesorii Nuntă',
             'url' => SiteSeo::url(),
+            'logo' => SiteSeo::url('/images/anna-logo.jpg'),
             'sameAs' => ['https://www.instagram.com/anna_accesorii_nunta/'],
         ],
         [

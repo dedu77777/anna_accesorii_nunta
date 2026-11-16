@@ -39,6 +39,7 @@ class WebsiteController extends Controller
                 //Home Page
                 'home' => ['GET'],
                 'site-version' => ['GET'],
+                'accept-cookies' => ['POST'],
                 'sitemap' => ['GET'],
                 'despre-noi' => ['GET'],
                 'produse' => ['GET'],
@@ -66,6 +67,18 @@ class WebsiteController extends Controller
         Yii::$app->response->format = Response::FORMAT_JSON;
         Yii::$app->response->headers->set('Cache-Control', 'no-store, private');
         return ['version' => SiteRefresh::version()];
+    }
+
+    public function actionAcceptCookies(): Response
+    {
+        Yii::$app->session->set('cookie_notice_accepted', true);
+
+        $return = Yii::$app->request->post('return', '/');
+        if (!is_string($return) || !preg_match('~\A/(?!/)[^\r\n\\\\]*\z~D', $return)) {
+            $return = '/';
+        }
+
+        return $this->redirect($return);
     }
 
     public function actionSitemap(): string

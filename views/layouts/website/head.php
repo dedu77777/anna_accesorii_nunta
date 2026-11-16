@@ -28,7 +28,7 @@ $canonicalUrl = $this->params['canonicalUrl'] ?? null;
 
 // SOCIAL SHARING
 $ogImage = $this->params['ogImage']
-    ?? SiteSeo::url('/images/anna-shop-1.jpg');
+    ?? SiteSeo::url('/images/anna-logo.jpg');
 
 $ogType = $this->params['ogType'] ?? 'website';
 
@@ -67,9 +67,10 @@ try {
 }
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="<?= Html::encode(Yii::getAlias('@web/favicon.ico?v=2')) ?>">
-<link rel="icon" type="image/png" sizes="32x32" href="<?= Html::encode(Yii::getAlias('@web/favicon-32x32.png?v=2')) ?>">
-<link rel="apple-touch-icon" sizes="180x180" href="<?= Html::encode(Yii::getAlias('@web/apple-touch-icon.png?v=2')) ?>">
+<link rel="icon" type="image/x-icon" href="<?= Html::encode(Yii::getAlias('@web/favicon.ico?v=3')) ?>">
+<link rel="icon" type="image/png" sizes="16x16" href="<?= Html::encode(Yii::getAlias('@web/favicon-16x16.png?v=3')) ?>">
+<link rel="icon" type="image/png" sizes="32x32" href="<?= Html::encode(Yii::getAlias('@web/favicon-32x32.png?v=3')) ?>">
+<link rel="apple-touch-icon" sizes="180x180" href="<?= Html::encode(Yii::getAlias('@web/apple-touch-icon.png?v=3')) ?>">
 <link rel="manifest" href="<?= Html::encode(Yii::getAlias('@web/site.webmanifest')) ?>">
 
 <title><?= Html::encode($title) ?></title>

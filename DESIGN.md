@@ -8,6 +8,7 @@ The site combines a wedding-accessory storefront with practical shopping flows. 
 - Headings use Georgia and body copy uses Arial. Preserve this pairing across cart, checkout, and confirmation.
 - Product photography carries the visual character. Forms use white panels, restrained borders, and clear labels.
 - Customer-facing language is Romanian. Prices display in MDL.
+- The cookie notice uses the existing white surface, warm border, Georgia heading, and dark action button. Dismissal is stored in the PHP session only, so a new session sees it again.
 
 ## Checkout behavior and layout
 

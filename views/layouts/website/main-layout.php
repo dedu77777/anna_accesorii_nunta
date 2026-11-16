@@ -37,6 +37,22 @@ $this->beginPage();
 
 <?= $this->render('footer') ?>
 
+<?php if (!Yii::$app->session->get('cookie_notice_accepted', false)): ?>
+<aside class="anna-cookie-banner" aria-labelledby="anna-cookie-title">
+    <div class="anna-cookie-banner__content">
+        <div>
+            <h2 id="anna-cookie-title">Despre cookie-uri</h2>
+            <p>Folosim doar cookie-urile necesare pentru coșul de cumpărături și siguranța formularelor. Alegerea ta rămâne valabilă numai în această sesiune.</p>
+            <?= Html::a('Politica de confidențialitate', ['/checkout/privacy'], ['class' => 'anna-cookie-banner__link']) ?>
+        </div>
+        <?= Html::beginForm(['/website/accept-cookies'], 'post', ['class' => 'anna-cookie-banner__form']) ?>
+            <?= Html::hiddenInput('return', Yii::$app->request->url) ?>
+            <?= Html::submitButton('Am înțeles', ['class' => 'anna-cookie-banner__button']) ?>
+        <?= Html::endForm() ?>
+    </div>
+</aside>
+<?php endif; ?>
+
 <?php $this->endBody() ?>
 </body>
 </html>

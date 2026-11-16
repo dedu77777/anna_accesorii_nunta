@@ -1,0 +1,60 @@
+.anna-cookie-banner {
+    position: fixed;
+    z-index: 1100;
+    right: max(20px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
+    left: max(20px, env(safe-area-inset-left));
+    max-width: 730px;
+    margin-inline: auto;
+    border: 1px solid var(--anna-border);
+    border-radius: 12px;
+    background: var(--anna-surface);
+    box-shadow: 0 16px 45px rgb(41 38 37 / 16%);
+    color: var(--anna-text);
+}
+
+.anna-cookie-banner__content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 26px;
+}
+
+.anna-cookie-banner h2 {
+    margin: 0 0 6px;
+    font: 400 22px/1.2 Georgia, "Times New Roman", serif;
+}
+
+.anna-cookie-banner p {
+    margin: 0 0 7px;
+    color: var(--anna-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.anna-cookie-banner__link {
+    color: #765836;
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.anna-cookie-banner__button {
+    min-width: 130px;
+    min-height: 44px;
+    padding: 11px 18px;
+    border: 1px solid var(--anna-text);
+    border-radius: 6px;
+    background: var(--anna-text);
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.anna-cookie-banner__button:hover { background: #51443b; }
+.anna-cookie-banner :is(a, button):focus-visible { outline: 3px solid var(--anna-accent); outline-offset: 3px; }
+
+@media (max-width: 600px) {
+    .anna-cookie-banner__content { align-items: stretch; flex-direction: column; gap: 16px; padding: 20px; }
+    .anna-cookie-banner__button { width: 100%; }
+}

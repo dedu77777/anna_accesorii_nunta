@@ -20,6 +20,7 @@ class WebsiteAsset extends AssetBundle
         'css/detailsProducts.css',
         'css/checkout.css',
         'css/cart-toast.css',
+        'css/cookie-banner.css',
     ];
 
     public $js = [

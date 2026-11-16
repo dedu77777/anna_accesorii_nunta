@@ -9,7 +9,7 @@ if (PHP_SAPI === 'cli-server') {
 
     if ($webroot !== false && $file !== false
         && str_starts_with($file, $webroot . DIRECTORY_SEPARATOR)
-        && preg_match('~\.(?:css|js|png|jpe?g|webp|svg|ico|txt|xml)$~iD', $file)
+        && preg_match('~\.(?:css|js|png|jpe?g|webp|svg|ico|txt|xml|webmanifest)$~iD', $file)
         && is_file($file)) {
         return false;
     }

@@ -93,6 +93,7 @@ $config = [
                 'GET produse' => 'website/produse',
                 'GET produse/cauta' => 'website/cauta-produse',
                 'GET site-version' => 'website/site-version',
+                'POST accept-cookies' => 'website/accept-cookies',
                 'GET sitemap.xml' => 'website/sitemap',
                 'GET produse/<id:\d+>' => 'website/detalii-produs',
 
